@@ -1,6 +1,9 @@
 # Custom
 .test/
 
+# Don't track FB keys/account
+service-account.json
+
 # VS Code
 .vscode/
 
