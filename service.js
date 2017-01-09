@@ -2,22 +2,7 @@ const moment = require('moment');
 const api = require('./lib/crossover-api');
 const ref = api.getFirebaseRef();
 
-// var idWestworld = 63247;
-// var idArrow = 1412;
-// var idLegendsDC = 62643;
-// var idFlash = 60735;
-// var idVixen = 62125;
-// var idSupergirl = 62688;
-
-// api.seedLists();
-
-// ref.child('users').set({placeholder: true})
-// ref.child('user_timelines_items').set({placeholder: true})
-// ref.child('timeline_items').set({placeholder: true})
-
-// ref.child('source').remove();
-
-ref.child('tasks').on('child_added', function (snapshot) {
+ref.child('tasks').on('child_added', function(snapshot) {
   // console.log('refresh serie', snapshot.val());
   const task = snapshot.val();
   const taskRef = ref.child('tasks').child(snapshot.key);
@@ -29,8 +14,11 @@ ref.child('tasks').on('child_added', function (snapshot) {
     case 'fetch_serie_episodes':
       return fetchSerieEpisodes(task.serie).then(() => taskRef.remove());
       break;
+    // case 'generate_timeline':
+    //   // return fetchSerie(task.serie).then(() => taskRef.remove());
+    //   break;
   }
-})
+});
 
 // API below
 function fetchSerie(serieId) {
