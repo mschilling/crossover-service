@@ -42,3 +42,4 @@ function saveSerieEpisodes(serieId, data) {
   console.log('Save serie episodes ' + serieId);
   return ref.child('data_episodes').child(serieId).set(data);
 }
+
