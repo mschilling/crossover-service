@@ -14,9 +14,10 @@ ref.child('tasks').on('child_added', function(snapshot) {
     case 'fetch_serie_episodes':
       return fetchSerieEpisodes(task.serie).then(() => taskRef.remove());
       break;
-    // case 'generate_timeline':
-    //   // return fetchSerie(task.serie).then(() => taskRef.remove());
-    //   break;
+    case 'generate_user_timeline':
+      const listRef = ref.child(task.listRef);
+      return api.generateUserTimeline(task.user, listRef).then(() => taskRef.remove());
+      break;
   }
 });
 
