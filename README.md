@@ -15,6 +15,13 @@ optional:
 
 - `npm install`
 
+#### - Download Firebase Service Account
+
+- Download service account (json) from Firebase Service Accounts or Google Developers Console.
+- Save account file (rename into `service-account.json`) in root folder
+
+More info: https://firebase.google.com/docs/admin/setup
+
 #### - Run Service
 by default, just type:
 `node ./service.js`
