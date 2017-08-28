@@ -62,7 +62,8 @@ switch(LIST_ID) {
       api.Constants.Series.daredevil,
       api.Constants.Series.jessicaJones,
       api.Constants.Series.lukeCage,
-      api.Constants.Series.ironFist];
+      api.Constants.Series.ironFist,
+      api.Constants.Series.defenders];
     break;
   case 2:
     path = 'timelines/dc';
